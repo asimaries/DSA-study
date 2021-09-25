@@ -4,7 +4,7 @@
 using namespace std;
 
 //BUBBLE SORT
-int bubbleSort(vector<int> &arr, int n)
+void bubbleSort(vector<int> &arr, int n)
 {
 
     for (int i = 0; i < n; ++i)
@@ -20,7 +20,7 @@ int bubbleSort(vector<int> &arr, int n)
 }
 
 // SELECTION SORT
-int selectionSort(vector<int> &arr, int n)
+void selectionSort(vector<int> &arr, int n)
 {
 
     for (int i = 0; i < n; ++i)
@@ -54,7 +54,7 @@ void intsertionSort(vector<int> &arr, int n)
 }
 
 //QUICKSORT
-int partition(int arr[], int l, int h)
+int partition(vector<int> &arr, int l, int h)
 {
     int i = l, j = l, pi = arr[h];
 
@@ -71,7 +71,7 @@ int partition(int arr[], int l, int h)
     return i;
 }
 
-void quickSort(int arr[], int l, int h)
+void quickSort(vector<int> &arr, int l, int h)
 {
     if (l < h)
     {
@@ -84,7 +84,7 @@ void quickSort(int arr[], int l, int h)
 }
 
 // MERGE SORT
-void merge(int arr[], int l, int m, int h)
+void merge(vector <int> &arr, int l, int m, int h)
 {
     int an = m - l + 1;
     int bn = h - m;
@@ -130,7 +130,7 @@ void merge(int arr[], int l, int m, int h)
     }
 }
 
-void mergeSort(int arr[], int l, int h)
+void mergeSort(vector <int> &arr, int l, int h)
 {
     if (l < h)
     {
@@ -227,7 +227,6 @@ void cycleSort(vector<int> &arr, int n)
         }
     }
 }
-
 
 //COUNT SORT
 void countSort(vector<int> &v, int mx, int mn)
