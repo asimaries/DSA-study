@@ -112,7 +112,8 @@ void popTail(NodeC **head)
 
 void pushKth(NodeC **head, int x, int k)
 {
-    if (k == 0) return;
+    if (k == 0)
+        return;
     if (*head == NULL || k == 1)
     {
         return pushHead(&*head, x);
@@ -174,7 +175,7 @@ void solve()
 
     NodeC *head = NULL;
     printList(head);
-    int n = 5; //No. of Nodes
+    int n = 5; // No. of Nodes
     // cin >> n;
     for (int i = 1; i <= n; i++)
     {

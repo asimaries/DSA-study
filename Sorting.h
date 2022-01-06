@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//BUBBLE SORT
+// BUBBLE SORT
 void bubbleSort(vector<int> &arr, int n)
 {
 
@@ -37,7 +37,7 @@ void selectionSort(vector<int> &arr, int n)
     }
 }
 
-//INSERTION SORT
+// INSERTION SORT
 void intsertionSort(vector<int> &arr, int n)
 {
     for (int i = 1; i < n; ++i)
@@ -53,7 +53,7 @@ void intsertionSort(vector<int> &arr, int n)
     }
 }
 
-//QUICKSORT
+// QUICKSORT
 int partition(vector<int> &arr, int l, int h)
 {
     int i = l, j = l, pi = arr[h];
@@ -84,66 +84,47 @@ void quickSort(vector<int> &arr, int l, int h)
 }
 
 // MERGE SORT
-void merge(vector <int> &arr, int l, int m, int h)
+void merge(int *arr, int start, int mid, int end, int *temp)
 {
-    int an = m - l + 1;
-    int bn = h - m;
-
-    int a[an], b[bn];
-    for (int i = 0; i < an; i++)
+    int i = start, j = mid + 1, k = 0;
+    while (i <= mid && j <= end)
     {
-        a[i] = arr[l + i];
-    }
-    for (int i = 0; i < bn; i++)
-    {
-        b[i] = arr[m + 1 + i];
-    }
-
-    int i = 0, j = 0, k = l;
-
-    while (i < an && j < bn)
-    {
-        if (a[i] <= b[j])
+        if (arr[i] < arr[j])
         {
-            arr[k] = a[i];
-            i++;
+            temp[k++] = arr[i++];
         }
         else
         {
-            arr[k] = b[j];
-            j++;
+            temp[k++] = arr[j++];
         }
-        k++;
     }
-
-    while (i < an)
+    while (i <= mid)
     {
-        arr[k] = a[i];
-        k++;
-        i++;
+        temp[k++] = arr[i++];
     }
-    while (j < bn)
+    while (j <= end)
     {
-        arr[k] = b[j];
-        k++;
-        j++;
+        temp[k++] = arr[j++];
+    }
+    for (int i = start, k = 0; i <= end; i++, k++)
+    {
+        arr[i] = temp[k];
     }
 }
 
-void mergeSort(vector <int> &arr, int l, int h)
+void mergeSort(int *arr, int start, int end, int *temp)
 {
-    if (l < h)
+    int mid;
+    if (start < end)
     {
-        int m = l + ((h - l) >> 1);
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, h);
-
-        merge(arr, l, m, h);
+        mid = start + (end - start) >> 1;
+        mergeSort(arr, start, mid, temp);
+        mergeSort(arr, mid + 1, end, temp);
+        merge(arr, start, mid, end, temp);
     }
-    return;
 }
 
-//DNF SORT
+// DNF SORT
 void dnfSort(vector<int> &v, int n)
 {
     int l = 0, h = n - 1, m = 0;
@@ -171,7 +152,6 @@ void dnfSort(vector<int> &v, int n)
 // WAVE SORT
 void wavesort(vector<int> &arr)
 {
-
     int n = arr.size();
     for (int i = 1; i < n; i += 2)
     {
@@ -228,7 +208,7 @@ void cycleSort(vector<int> &arr, int n)
     }
 }
 
-//COUNT SORT
+// COUNT SORT
 void countSort(vector<int> &v, int mx, int mn)
 {
     vector<int> freq(mx - mn + 1);
@@ -256,7 +236,7 @@ void countSort(vector<int> &v, int mx, int mn)
     return;
 }
 
-//RADIX SORT
+// RADIX SORT
 int getMAX(vector<int> &arr, int n)
 {
     int mx = arr[0];

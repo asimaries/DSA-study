@@ -59,18 +59,27 @@ inline void solve()
     vector<int> nums1 = {4, 1, 2};
     stack<int> s;
     vector<int> ans(n);
-    for (int i = n - 1; i >= 0; i--)
-    {
-        if (!s.empty())
-        {
-            while (!s.empty() && s.top() <= arr[i])
-            {
-                s.pop();
-            }
-        }
-        ans[i] = (s.empty() ? -1 : s.top());
-        s.push(arr[i]);
-    }
+    // for (int i = n - 1; i >= 0; i--)
+    // {
+    //     if (!s.empty())
+    //     {
+    //         while (!s.empty() && s.top() <= arr[i])
+    //         {
+    //             s.pop();
+    //         }
+    //     }
+    //     ans[i] = (s.empty() ? -1 : s.top());
+    //     s.push(arr[i]);
+    // }
+    for (int i = 0; i < n; i++)
+	{
+		while (!s.empty() && arr[s.top()]>arr[i])
+		{
+			ans[s.top()] = i-s.top()-1;
+			s.pop();
+		}
+		s.push(i);
+	}
     // reverse(all(ans));
     for (auto i : ans)
     {

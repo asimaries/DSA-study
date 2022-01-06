@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "../DSA_Git/Linked_List/SLL.h"
+#include "SLL.h"
 using namespace std;
 
 Node *getmid(Node *head)
@@ -47,7 +47,7 @@ Node *merge(Node *list1, Node *list2)
     return dummy->next;
 }
 
-Node *mergeSort_List(Node *head)
+Node *MergeSort(Node *head)
 {
     if (head == NULL || head->next == NULL)
     {
@@ -57,8 +57,8 @@ Node *mergeSort_List(Node *head)
     Node *mid = getmid(head);
     Node *newHead = mid->next;
     mid->next = NULL;
-    Node *l1 = mergeSort_List(head);
-    Node *l2 = mergeSort_List(newHead);
+    Node *l1 = MergeSort(head);
+    Node *l2 = MergeSort(newHead);
 
     return merge(l1, l2);
 }
@@ -76,7 +76,7 @@ bool check(Node *head)
     return true;
 }
 
-inline void solve()
+int main()
 {
     Node *head = NULL;
     int n, x;
@@ -87,24 +87,7 @@ inline void solve()
         pushBack(head, x);
     }
     printList(head);
-    head = mergeSort_List(head);
-    // cout << check(head) <<endl;
+    head = MergeSort(head);
     printList(head);
-    // cout << getmid(head)->data;
-}
-
-int main()
-{
-#ifndef ONLINE_JUDGE
-    freopen("in.in", "r", stdin);
-    freopen("out.in", "w", stdout);
-#endif
-
-    // int t;
-    // scanf("%d", &t);
-    // while (t--)
-    {
-        solve();
-    }
     return 0;
 }

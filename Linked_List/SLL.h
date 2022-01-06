@@ -42,15 +42,15 @@ void pushFront(Node *&head, int x)
 /* Inserting at the end  -  O(n) */
 void pushBack(Node *&head, int x)
 {
-    Node *temp = new Node(x); // Creting a new Node
-    if (head == NULL)        // if head is NULL we will change the head with temp
+    Node *temp = new Node(x); // Creating a new Node
+    if (head == NULL)         // if head is NULL we will change the head with temp
     {
         head = temp;
     }
     else
     {
         Node *curr = head; // curr to traverse at the end of Linked List
-        while (curr->next)  // until curr is NULL, loop will run
+        while (curr->next) // until curr is NULL, loop will run
         {
             curr = curr->next; // Update curr next to curr
         }

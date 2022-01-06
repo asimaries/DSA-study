@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "new": "cpp",
+    "map": "cpp",
+    "MEA2.C": "cpp",
+    "DLA.C": "cpp",
+    "BRESEN.C": "cpp",
+    "array": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "CHARACTER.C": "cpp",
+    "DASHED~2.C": "cpp"
+  }
+}
