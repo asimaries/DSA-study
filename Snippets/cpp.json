@@ -1,73 +1,170 @@
-{
-	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	"CPP": {
+{	"CPP": {
 		"prefix": "u",
 		"body": [
-			"#include <bits/stdc++.h>",
-			"using namespace std;",
-			"",
-			"#define endl '\\n'",
-			"#define space ' '",
-			"#define dbg(x) printf(\"%s = %d\\n\", #x, x);",
-			"#define all(x) (x).begin(), (x).end()",
-			"template <typename T> void printarr(vector<T> &a){ cout << \"\\n[ \"; for (auto i : a) cout << i << ' '; cout << \"]\\n\"; }",
-
-			"typedef long long ll;",
-			// "#define allr(x) (x).rbegin(),(x).rend()",
-			"// const int mod = 1e9+7;",
-			"inline void solve();",
-			"",
-			"int32_t main()",
-			"{",
-			"#ifndef ONLINE_JUDGE",
-			"    freopen(\"in.in\", \"r\", stdin);",
-			"    freopen(\"out.in\", \"w\", stdout);",
-			"#endif",
-			//   "    ios_base::sync_with_stdio(false);",
-			//   "    cin.tie(NULL);",
-			//   "    cout.tie(NULL);",
-			"",
-			"    int t;",
-			"    // scanf(\"%d\", &t); while (t--)",
-			"    {",
-			"        solve();",
-			"    }",
-			"    return 0;",
-			"}",
-			"/*************************************/",
-			"",
-			"",
-			"inline void solve()",
-			"{",
-			"    $1",
-			"}",
-			""
+		  "#include <bits/stdc++.h>",
+		  "using namespace std;",
+		  "",
+		  "#define endl '\\n'",
+		  "#define ll long long int",
+		  "#define ld long double",
+		  "#define ull unsigned long long",
+		  "#define mod 1000000007",
+		  "#define PI 3.141592653589793238462",
+		  "#define sz(x) ((int)(x).size())",
+		  "#define gri greater<int>()",
+		  "#define all(x) (x).begin(), (x).end()",
+		  "#define debug(x)                    \\",
+		  "    cout << #x << \" = \", _print(x); \\",
+		  "    cout << endl;",
+		  "/*-------------------ASIMARIES--------------------*/",
+		  "void _print(int t) { cout << t; }",
+		  "void _print(ll t) { cout << t; }",
+		  "void _print(string t) { cout << t; }",
+		  "void _print(char t) { cout << t; }",
+		  "void _print(ld t) { cout << t; }",
+		  "void _print(double t) { cout << t; }",
+		  "void _print(ull t) { cout << t; }",
+		  "template <class T, class V>",
+		  "void _print(pair<T, V> p);",
+		  "template <class T>",
+		  "void _print(vector<T> v);",
+		  "template <class T>",
+		  "void _print(set<T> v);",
+		  "template <class T, class V>",
+		  "void _print(map<T, V> v);",
+		  "template <class T>",
+		  "void _print(multiset<T> v);",
+		  "template <class T, class V>",
+		  "void _print(pair<T, V> p) { cout << \"{\", _print(p.first), cout << \" ,\", _print(p.second), cout << \"}\"; }",
+		  "template <class T>",
+		  "void _print(vector<T> v)",
+		  "{",
+		  "    cout << \"[ \";",
+		  "    for (T i : v)",
+		  "        _print(i), cout << \" \";",
+		  "    cout << \"]\";",
+		  "}",
+		  "template <class T>",
+		  "void _print(set<T> v)",
+		  "{",
+		  "    cout << \"[ \";",
+		  "    for (T i : v)",
+		  "        _print(i), cout << \" \";",
+		  "    cout << \"]\";",
+		  "}",
+		  "template <class T>",
+		  "void _print(multiset<T> v)",
+		  "{",
+		  "    cout << \"[ \";",
+		  "    for (T i : v)",
+		  "        _print(i), cout << \" \";",
+		  "    cout << \"]\";",
+		  "}",
+		  "template <class T, class V>",
+		  "void _print(map<T, V> v)",
+		  "{",
+		  "    cout << \"[ \";",
+		  "    for (auto i : v)",
+		  "        _print(i), cout << \"\\n\";",
+		  "    cout << \"]\";",
+		  "}",
+		  "template <class T>",
+		  "void printArr(vector<T> v)",
+		  "{",
+		  "    for (auto i : v)",
+		  "        cout << i << \" \";",
+		  "    cout << endl;",
+		  "}",
+		  "/*----------------ASIMARIES-----------------*/",
+		  "void asimaries();",
+		  "",
+		  "signed main()",
+		  "{",
+		  "#ifndef ONLINE_JUDGE",
+		  "    freopen(\"in.in\", \"r\", stdin);",
+		  "    freopen(\"out.in\", \"w\", stdout);",
+		  "#endif",
+		  "",
+		  "    int t = 1;",
+		  "    cin >> t;",
+		  "    while (t--)",
+		  "    {",
+		  "        asimaries();",
+		  "        cout << endl;",
+		  "    }",
+		  "    return 0;",
+		  "}",
+		  "/*-----------------ASIMARIES----------------*/",
+		  "",
+		  "void asimaries()",
+		  "{$1",
+		  "}",
+		  ""
 		],
 		"description": "CPP"
-	},
+	  },
 	"debug": {
 		"prefix": "dbg",
 		"body": [
-			"dbg($1)"
+			"debug($1);"
 		],
 		"description": "debug"
 	},
-	"allIterator": {
-		"prefix": "all",
+	"vector":{
+		"prefix": "vec",
 		"body": [
-			"all($1)"
+			"vector <$1> ();"
 		],
-		"description": "allIterator"
+		"description": "vector<>"
 	},
-	"length": {
-		"prefix": "len",
+	"set":{
+		"prefix": "st",
 		"body": [
-			"length()"
+			"set <$1> st;"
 		],
-		"description": "length"
+		"description": "set<>"
+	},
+	"map":{
+		"prefix": "mp",
+		"body": [
+			"map <$1, $2> mp;"
+		],
+		"description": "map<>"
+	},
+	"pair":{
+		"prefix": "pr",
+		"body": [
+			"pair <$1, $2> pr;"
+		],
+		"description": "pair<>"
+	},
+	"stack":{
+		"prefix": "stk",
+		"body": [
+			"stack <$1> stk;"
+		],
+		"description": "stack<>"
+	},
+	"queue":{
+		"prefix": "qu",
+		"body": [
+			"queue <$1> q;"
+		],
+		"description": "queue<>"
+	},
+	"deque":{
+		"prefix": "dq",
+		"body": [
+			"deque <$1> dq;"
+		],
+		"description": "deque<>"
+	},
+	"sort":{
+		"prefix": "sor",
+		"body": [
+			"sort(all($1));"
+		],
+		"description": "sort()"
 	}
+	
 }
