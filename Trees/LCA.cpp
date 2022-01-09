@@ -1,12 +1,30 @@
 #include "BinaryTree.h"
 
-int solve(Node *root)
+Node *LCA(Node *root, Node *p, Node *q)
 {
-    return 0;
+    if (root == NULL || root == p || root == q)
+    {
+        return root;
+    }
+    Node *left = LCA(root->left, p, q);
+    Node *right = LCA(root->right, p, q);
+    if (left == NULL)
+    {
+        return right;
+    }
+    else if (right == NULL)
+    {
+        return left;
+    }
+    else
+    {
+        return root;
+    }
 }
 
 int main()
 {
+    inout();
     Node *root1 = new Node(1);
     root1->left = new Node(2);
     root1->right = new Node(3);
@@ -55,5 +73,6 @@ int main()
     // root->right->left->right = new Node(90);
     // root->right->left->left->right = new Node(100);
 
-    solve(root1);
+    cout << LCA(root1, root1->right->left, root1->right->right->right)->val << endl;
+    printTree(root1);
 }

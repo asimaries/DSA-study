@@ -44,10 +44,8 @@ void printKth(TreeNode *root, int k)
     printKth(root->right, k - 1);
 }
 
-
 int main()
 {
-    inout();
     TreeNode *root = new TreeNode(1);
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);

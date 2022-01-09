@@ -18,6 +18,97 @@ vector<int> preorderI(Node *root)
     return preorder;
 }
 
+vector<int> inorderI(Node *root)
+{
+    vector<int> inorder;
+    if (root == NULL)
+        return inorder;
+    stack<Node *> stk;
+    Node *curr = root;
+    while (true)
+    {
+        if (curr)
+        {
+            stk.push(curr);
+            curr = curr->left;
+        }
+        else
+        {
+            if (stk.empty())
+                break;
+            curr = stk.top();
+            stk.pop();
+            inorder.emplace_back(curr->val);
+            curr = curr->right;
+        }
+    }
+    return inorder;
+}
+
+vector<int> postorder2stkI(Node *root)
+{
+    vector<int> postorder;
+    if (root == NULL)
+        return postorder;
+    stack<Node *> stk1;
+    stack<Node *> stk2;
+    stk1.push(root);
+    while (!stk1.empty())
+    {
+        Node *curr = stk1.top();
+        stk1.pop();
+        stk2.push(curr);
+        if (curr->left)
+            stk1.push(curr->left);
+        if (curr->right)
+            stk1.push(curr->right);
+    }
+    while (!stk2.empty())
+    {
+        postorder.emplace_back(stk2.top()->val);
+        stk2.pop();
+    }
+    return postorder;
+}
+
+vector<int> postorderI(Node *root)
+{
+    vector<int> postorder;
+    if (root == NULL)
+        return postorder;
+    stack<Node *> stk;
+    Node *curr = root;
+    while (curr || !stk.empty())
+    {
+        if (curr)
+        {
+            stk.push(curr);
+            curr = curr->left;
+        }
+        else
+        {
+            Node *temp = stk.top()->right;
+            if (temp == NULL)
+            {
+                temp = stk.top();
+                stk.pop();
+                postorder.emplace_back(temp->val);
+                while (!stk.empty() && temp == stk.top()->right)
+                {
+                    temp = stk.top();
+                    stk.pop();
+                    postorder.emplace_back(temp->val);
+                }
+            }
+            else
+            {
+                curr = temp;
+            }
+        }
+    }
+    return postorder;
+}
+
 int main()
 {
     inout();
@@ -71,5 +162,9 @@ int main()
     // root->right->left->right = new Node(90);
     // root->right->left->left->right = new Node(100);
     vector<int> preorder = preorderI(root1);
-    printArr(preorder);
+    // printArr(preorder);
+    vector<int> inorder = inorderI(root1);
+    printArr(inorder);
+    vector<int> postorder = postorderI(root1);
+    printArr(postorder);
 }

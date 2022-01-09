@@ -24,6 +24,36 @@ int max_width(Node *root)
     return ans;
 }
 
+int widthOfBinaryTree(Node *root)
+{
+    int ans = 0;
+    if (root)
+    {
+        queue<pair<Node *, int>> q;
+        q.push({root, 0});
+        while (!q.empty())
+        {
+            int size = q.size();
+            int mn = q.front().second;
+            int l;
+            for (int i = 0; i < size; i++)
+            {
+                int cur_id = q.front().second - mn;
+                Node *curr = q.front().first;
+                q.pop();
+                if (i == size - 1)
+                    l = cur_id;
+                if (curr->left)
+                    q.push({curr->left, cur_id * 2 + 1});
+                if (curr->right)
+                    q.push({curr->right, cur_id * 2 + 2});
+            }
+            ans = max(ans, l + 1);
+        }
+    }
+    return ans;
+}
+
 int main()
 {
     inout();
