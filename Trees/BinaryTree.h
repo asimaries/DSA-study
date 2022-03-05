@@ -115,7 +115,7 @@ void _print(vector<T> v)
 {
     cout << "[ ";
     for (T i : v)
-        _print(i), cout << " ";
+        _print(i), cout << ", ";
     cout << "]";
 }
 template <class T>
