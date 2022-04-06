@@ -4,12 +4,14 @@ using namespace std;
 
 void solve()
 {
-    int a; cin >> a;
-    string b; cin >> b;
-    int mod =0;
+    int a;
+    cin >> a;
+    string b;
+    cin >> b;
+    int mod = 0;
     for (int i = 0; i < b.length(); i++)
     {
-        mod = (mod* 10 + b[i]-'0');
+        mod = (mod * 10 + b[i] - '0');
     }
     cout << __gcd(a, mod);
 }
