@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "numbers": "cpp",
+        "ranges": "cpp",
+        "future": "cpp",
+        "forward_list": "cpp",
+        "vector": "cpp",
+        "any": "cpp",
+        "*.tcc": "cpp",
+        "charconv": "cpp",
+        "compare": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "numeric": "cpp",
+        "cmath": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
+    }
+}

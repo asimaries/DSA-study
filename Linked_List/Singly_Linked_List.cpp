@@ -312,7 +312,7 @@ int main()
 #endif
 
 	solve();
-
+	
 	return 0;
 }
 

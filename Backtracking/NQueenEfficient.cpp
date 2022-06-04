@@ -30,7 +30,8 @@ void solve(int col, vector<string> &board, vector<vector<string>> &ans,
 
     for (int i = 0; i < n; i++)
     {
-        if (leftRow[i] == 0 && lowerDiagonal[i + col] == 0 && upperDiagonal[n - 1 + col - i] == 0)
+        if (leftRow[i] == 0 && lowerDiagonal[i + col] == 0 &&
+            upperDiagonal[n - 1 + col - i] == 0)
         {
             board[i][col] = 'Q';
             leftRow[i] = 1;

@@ -56,16 +56,14 @@ void intsertionSort(vector<int> &arr, int n)
 // QUICKSORT
 int partition(vector<int> &arr, int l, int h)
 {
-    int i = l, j = l, pi = arr[h];
+    int i = l, pi = arr[h];
 
-    while (j < h)
+    for (int j = l; j < h; j++)
     {
         if (arr[j] <= pi)
         {
-            swap(arr[i], arr[j]);
-            i++;
+            swap(arr[i++], arr[j]);
         }
-        j++;
     }
     swap(arr[i], arr[h]);
     return i;
@@ -76,11 +74,9 @@ void quickSort(vector<int> &arr, int l, int h)
     if (l < h)
     {
         int pivot = partition(arr, l, h);
-
         quickSort(arr, l, pivot - 1);
         quickSort(arr, pivot + 1, h);
     }
-    return;
 }
 
 // MERGE SORT
