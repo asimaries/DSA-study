@@ -1,0 +1,23 @@
+{
+    "workbench.colorTheme": "Sublime Material Theme - Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "code-runner.runInTerminal": true,
+    "code-runner.terminalRoot": "/",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.fontSize": 17,
+    "workbench.sideBar.location": "right",
+    "window.zoomLevel": -1,
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 22,
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "editor.glyphMargin": false,
+    "editor.cursorStyle": "block",
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#00ffff",
+        "editorCursor.background": "#000000",
+        "terminalCursor.foreground": "#ffff00"
+    }
+}
