@@ -3,21 +3,37 @@
     "workbench.iconTheme": "material-icon-theme",
     "code-runner.runInTerminal": true,
     "code-runner.terminalRoot": "/",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "terminal.integrated.fontSize": 17,
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": -1,
-    "editor.mouseWheelZoom": true,
-    "editor.fontSize": 22,
     "files.autoSave": "afterDelay",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.fontSize": 16,
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 19,
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "workbench.layoutControl.enabled": false,
     "editor.glyphMargin": false,
+    // "editor.lineNumbers": "off",
+    // "editor.folding": false,
     "editor.cursorStyle": "block",
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#00ffff",
         "editorCursor.background": "#000000",
         "terminalCursor.foreground": "#ffff00"
-    }
+    },
+    "editor.linkedEditing": true,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveServer.settings.donotShowInfoMsg": true,
+    // "editor.fontFamily": "Fira Code, Cascadia Code, Consolas, 'Courier New', monospace",
+    // "editor.fontLigatures": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "code-runner.saveFileBeforeRun": true,
+    "window.zoomLevel": -1,
+    "cSpell.userWords": [
+        "asimarix",
+        "ecommerce"
+    ],
+    
+    
 }
