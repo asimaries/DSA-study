@@ -2,42 +2,52 @@
 using namespace std;
 #define int long long
 int mans = -1, nans = -1;
-const int mod = 1e9 + 7;
+const int mod = 1000*1000*1000+7;
 void matMul(vector<vector<int>> &A, vector<vector<int>> &B)
 {
     int n = A.size();
-    vector<vector<int>> res(n, vector<int>(n, 0));
+    vector<vector<int>> arr(n, vector<int>(n, 0));
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             for (int k = 0; k < n; k++)
-                res[i][j] += (A[i][k] * B[k][j]) % mod, res[i][j] %= mod;
+                arr[i][j] += (A[i][k] * B[k][j]) % mod, arr[i][j] %= mod;
 
-    A = res;
+    A = arr;
 }
 
 void power(vector<vector<int>> &arr, int pow)
 {
     vector<vector<int>> I = {{1, 1}, {1, 0}};
-    // while (pow > 1)
+    while (pow > 1)
+    {
+        if (pow &1)
+        matMul(arr, I), pow-=1;
+        else
+        matMul(arr, arr), pow/= 2;
+    }
+
+    // if (pow == 1 || pow == 0)
+    //     return;
+    // if (pow & 1)
     // {
-    //     if (pow &1)
-    //     matMul(arr, I), pow-=1;
-    //     else 
-    //     matMul(arr, arr), pow/= 2;
+    //     power(arr, pow - 1);
+    //     matMul(arr, I);
     // }
-    
-    if (pow == 1 || pow == 0)
-        return;
-    if (pow & 1)
-    {
-        power(arr, pow - 1);
-        matMul(arr, I);
-    }
-    else
-    {
-        power(arr, pow / 2);
-        matMul(arr, arr);
-    }
+    // else
+    // {
+    //     power(arr, pow / 2);
+    //     matMul(arr, arr);
+    // }
+    // while (pow > 0)
+    // {
+    //     if (pow & 1)
+    //     {
+    //         vector<vector<int>> temp = {{1, 1}, {1, 0}};
+    //         matMul(arr, temp);
+    //     }
+    //     pow = pow / 2;
+    //     matMul(arr, arr);
+    // }
 }
 
 int fiboSum(int x)
@@ -49,6 +59,17 @@ int fiboSum(int x)
     vector<int> helper = {1, 0};
     vector<vector<int>> arr = {{1, 1}, {1, 0}};
     power(arr, x - 1);
+    // int pow = x - 1;
+    // while (pow > 1)
+    // {
+    //     if (pow & 1)
+    //     {
+    //         vector<vector<int>> temp = {{1, 1}, {1, 0}};
+    //         matMul(arr, temp);
+    //     }
+    //     matMul(arr, arr);
+    //     pow /= 2;
+    // }
     int ans = 0;
     for (int i = 0; i < 2; i++)
     {
@@ -59,6 +80,9 @@ int fiboSum(int x)
 
 signed main()
 {
+// #ifndef ONLINE_JUDGE
+//     freopen("D:\\_Program\\CF\\in.txt", "r", stdin);
+// #endif
     int t = 1;
     cin >> t;
     while (t--)
@@ -79,13 +103,13 @@ signed main()
    Time Complexity: O(Log(M))
    Space Complexity: O(1)
 
-   Where ‘M’ represents the end of the range
+   Where ‘M’ reparrents the end of the range
 
 
 // Function to multiply two matrices
 void multiply(vector<vector<int>> &first, vector<vector<int>> &second)
 {
-    vector<vector<int>> res(2, vector<int>(2, 0));
+    vector<vector<int>> arr(2, vector<int>(2, 0));
 
     for (int i = 0; i < 2; i++)
     {
@@ -93,12 +117,12 @@ void multiply(vector<vector<int>> &first, vector<vector<int>> &second)
         {
             for (int x = 0; x < 2; x++)
             {
-                res[i][j] = (res[i][j] + (1LL * first[i][x] * second[x][j]) % 1000000007) % 1000000007;
+                arr[i][j] = (arr[i][j] + (1LL * first[i][x] * second[x][j]) % 1000000007) % 1000000007;
             }
         }
     }
 
-    first = res;
+    first = arr;
 }
 
 // Function to help in binary exponentiation

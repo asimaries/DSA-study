@@ -56,6 +56,7 @@ signed main()
         int answt = 0;
         for (int i = 0; i < n - 1; i++)
         {
+            cout << answt << " ";
             answt += ans[i].wt;
         }
         cout << answt << endl;

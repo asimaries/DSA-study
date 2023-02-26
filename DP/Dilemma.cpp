@@ -29,7 +29,8 @@ int func(vector<string> &arr, int mask, int pos, int n)
             }
         }
     }
-    return dp[pos][mask] = min(func(arr, mask1, pos - 1, n) + func(arr, mask2, pos - 1, n) + touch, func(arr, mask, pos - 1, n));
+    return dp[pos][mask] = min(func(arr, mask1, pos - 1, n) + func(arr, mask2, pos - 1, n) + touch,
+     func(arr, mask, pos - 1, n));
 }
 
 signed main()

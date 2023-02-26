@@ -41,20 +41,84 @@ int solve(vector<vector<int>> &graph, int n)
 
 int main()
 {
-    int t; cin >> t;
-    while(t--){
-    int n;
-    cin >> n;
-    string temp;
-    vector<vector<int>> graph(n, vector<int>(n));
-    for (int i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> temp;
-        for (int j = 0; j < n; j++)
-            graph[i][j] = temp[j] - '0';
-    }
+        int n;
+        cin >> n;
+        string temp;
+        vector<vector<int>> graph(n, vector<int>(n));
+        for (int i = 0; i < n; i++)
+        {
+            cin >> temp;
+            for (int j = 0; j < n; j++)
+                graph[i][j] = temp[j] - '0';
+        }
 
-    cout << solve(graph, n)<< endl;
+        cout << solve(graph, n) << endl;
     }
     return 0;
 }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// void dfs(int **cake, int n, int i, int j, bool **visited, int &count)
+// {
+//     visited[i][j] = true;
+//     if (i < 0 || j >= n || cake[i][j] == 0 || j < 0 || i >= n)
+//     {
+//         return 0;
+//     }
+//     count++;
+//     dfs(cake, n, i, j + 1, visited);
+//     dfs(cake, n, i + 1, j, visited);
+//     dfs(cake, n, i + 1, j + 1, visited);
+//     dfs(cake, n, i - 1, j - 1, visited);
+//     return;
+// }
+// int piece(int **cake, int n)
+// {
+//     int ans = 0;
+//     bool **visited = new bool *[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         visited[i] = new bool[n];
+//         for (int j = 0; j < n; j++)
+//         {
+//             visited[i][j] = false;
+//         }
+//     }
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             int count = 0;
+//             dfs(cake, n, i, j, vis, count);
+//             ans = max(ans, count);
+//         }
+//     }
+//     return ans;
+// }
+// int main()
+// {
+
+//     // write your code here
+//     int t;
+//     cin >> t;
+//     while (t--)
+//     {
+//         int n;
+//         int **cake = new int *[n];
+//         for (int i = 0; i < n; i++)
+//         {
+//             cake[i] = new int[n];
+//             for (int j = 0; j < n; j++)
+//             {
+//                 cin >> cake[i][j];
+//             }
+//         }
+//         cout << piece(cake, n) << endl;
+//     }
+//     return 0;
+// }

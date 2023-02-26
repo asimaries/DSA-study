@@ -3,16 +3,7 @@ using namespace std;
 
 #define endl '\n'
 #define INF 1000000000
-#define lINF 100000000000000000
 #define int long long
-#define ld long double
-#define ull unsigned long long
-#define mod 1000000007
-#define PI 3.141592653589793238462
-#define sz(x) ((int)(x).size())
-#define gri greater<int>()
-#define all(x) (x).begin(), (x).end()
-/*-------------------ASIMARIES--------------------*/
 vector<int> primes;
 void __sieve(int n = 1000009)
 {
@@ -34,7 +25,7 @@ void __sieve(int n = 1000009)
 
 signed main()
 {
-    freopen("in.in", "r", stdin);
+    // freopen("in.in", "r", stdin);
     int n, k;
     cin >> n >> k;
     vector<int> arr(n);
@@ -124,3 +115,16 @@ signed main()
     cout << ans << endl;
     return 0;
 }
+Let's use two pointers.
+
+Firstly you need to learn to factorize any number in no more than . We don't actually need any of their prime divisors except for those that are presented in k. So let's factorize k in . After that check for the maximum power of each useful prime will work in  for each number.
+
+Now notice that if some segment [l, r] has its product divisible by k then all segments [l, i] for (r ≤ i ≤ n) will also have products divisible by k.
+
+Now we have to find the smallest r for each l out there. That's where two pointers kick in. Let's maintain the current product of the segment in factorized form (only useful primes), as in normal form its enormous. The power of some prime in this form is the sum of powers of this prime in all the numbers in the segment.
+
+We firstly move the left border of the segment one step to the right and then keep moving the right border to the right until power of at least one prime number in the product is smaller than in k. It means that it is not divisible by k. Moving the left border means subtracting all the powers of useful primes of number al from the product and moving the right border is adding all the powers of useful primes of ar.
+
+The first time we reach such a segment, we add (n - r) to answer (consider r 0-indexed).
+
+Overall complexity: , where MAXN is up to 109.

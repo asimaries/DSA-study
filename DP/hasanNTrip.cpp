@@ -20,7 +20,8 @@ double hasanNtrip(vector<pair<double, double>> &arr, vector<double> &happy, int 
     for (int i = 0; i < n; i++)
     {
         double x = distance(arr[i], arr[n]);
-        ans = max(ans, hasanNtrip(arr, happy, i, dp) - x);
+        double t = hasanNtrip(arr, happy, i, dp);
+        ans = max(ans, t - x);
     }
     return dp[n] = happy[n] + ans;
 }

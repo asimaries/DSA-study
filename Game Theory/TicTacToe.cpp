@@ -84,10 +84,8 @@ pair<int, int> minimax(vector<vector<char>> &board, int depth, bool isMax)
         {
             for (int j = 0; j < 3; j++)
             {
-
                 if (board[i][j] == '_')
                 {
-
                     board[i][j] = player;
 
                     best = max(best,
@@ -189,16 +187,13 @@ Move findBestMoveForO(vector<vector<char>> &board)
     {
         for (int j = 0; j < 3; j++)
         {
-
             if (board[i][j] == '_')
             {
-
                 board[i][j] = opponent;
 
                 pair<int, int> moveVal = minimax(board, 1, true);
 
                 board[i][j] = '_';
-
                 if (moveVal.first < bestVal)
                 {
                     bestMove.row = i;
@@ -250,3 +245,4 @@ int main()
     cout << " row: " << bestMove.row << " col: " << bestMove.col;
     return 0;
 }
+

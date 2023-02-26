@@ -47,7 +47,7 @@ void solve()
     vector<int> a(n), b(n);
     for (int i = 0; i < n; i++)
         cin >> a[i] >> b[i];
-
+    
     vector<pair<int, int>> v;
     for (int i = 0; i < n; i++)
     {

@@ -9,9 +9,8 @@ signed main()
     cin >> t;
     while (t--)
     {
-
         int n, e;
-        cin >> n >> e;
+        cin >> n >> e;  
         vector<vector<int>> graph;
         int a, b;
         cin >> a >> b;

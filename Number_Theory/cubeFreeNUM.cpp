@@ -41,7 +41,7 @@ void solve()
     {
         cout << "Not Cube Free";
     }
-}
+}   
 
 signed main()
 {

@@ -23,7 +23,6 @@ class segTree
             else
                 return b;
         }
-
         return b;
     }
     int size, N;
@@ -60,7 +59,7 @@ class segTree
             return ans2;
         if (ans2 == -1)
             return ans1;
-        return func(arr, ans1, ans2);                                     // FUNCTION
+        return func(arr, ans1, ans2); // FUNCTION
     }
 
 public:
@@ -95,7 +94,7 @@ int main()
     {
         int x, y;
         cin >> x >> y;
-        cout << st.query(arr, x, y)+1 << endl;
+        cout << st.query(arr, x, y) + 1 << endl;
     }
 
     return 0;

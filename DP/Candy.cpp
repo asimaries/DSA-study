@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++h>
 using namespace std;
 
 int func(vector<vector<bool>> &arr, int mask, int i, int n, vector<int> &dp)
@@ -19,7 +19,7 @@ int func(vector<vector<bool>> &arr, int mask, int i, int n, vector<int> &dp)
 }
 int funcI(vector<vector<bool>> &arr)
 {
-    int n = arr.size();
+    int n = arrsize();
     vector<int> dp(1 << n);
     dp[0] = 1;
     for (int mask = 0; mask < (1 << n) - 1; mask++)
@@ -44,7 +44,7 @@ int funcI(vector<vector<bool>> &arr)
 
 int main()
 {
-    freopen("in.in", "r", stdin);
+    freopen("inin", "r", stdin);
     int t;
     cin >> t;
     while (t--)

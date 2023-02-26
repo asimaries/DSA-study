@@ -3,59 +3,7 @@ using namespace std;
 const int N = 1e5 + 10;
 bool vis[N];
 stack<int> stk;
-/*************************************/
-#define debug(x)                    \
-    cerr << #x << " = ", _print(x); \
-    cerr << endl;
-void _print(int t) { cerr << t; }
-void _print(string t) { cerr << t; }
-void _print(char t) { cerr << t; }
-void _print(double t) { cerr << t; }
-template <class T, class V>
-void _print(pair<T, V> p);
-template <class T>
-void _print(vector<T> v);
-template <class T>
-void _print(set<T> v);
-template <class T, class V>
-void _print(map<T, V> v);
-template <class T>
-void _print(multiset<T> v);
-template <class T, class V>
-void _print(pair<T, V> p) { cerr << "{", _print(p.first), cerr << " ,", _print(p.second), cerr << "}\n"; }
-template <class T>
-void _print(vector<T> v)
-{
-    cerr << "[ ";
-    for (T i : v)
-        _print(i), cerr << " ";
-    cerr << "]\n";
-}
-template <class T>
-void _print(set<T> v)
-{
-    cerr << "[ ";
-    for (T i : v)
-        _print(i), cerr << " ";
-    cerr << "]\n";
-}
-template <class T>
-void _print(multiset<T> v)
-{
-    cerr << "[ ";
-    for (T i : v)
-        _print(i), cerr << " ";
-    cerr << "]\n";
-}
-template <class T, class V>
-void _print(map<T, V> v)
-{
-    cerr << "[\n";
-    for (auto i : v)
-        _print(i), cerr << "\n";
-    cerr << "]\n";
-}
-/*************************************/
+
 void dfs1(vector<int> graph[], int vertex)
 {
     vis[vertex] = true;
@@ -123,8 +71,6 @@ signed main()
         vector<vector<int>> ans;
 
         getSCC(graph, graphT, ans, n);
-        debug(ans);
-
         set<int> bottom;
         for (auto &vec : ans)
         {
